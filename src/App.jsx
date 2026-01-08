@@ -1,6 +1,6 @@
 import './App.css'
 import { Navbar } from './components/Navbar'
-import { HomeView } from './views/home/homeView'
+import { HomeView } from './views/home/HomeView'
 
 function App() {
 
