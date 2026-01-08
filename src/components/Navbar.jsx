@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { SearchBar } from '../views/home/components/searchBar/SearchBar'
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
@@ -13,23 +14,23 @@ export const Navbar = () => {
             <path d="m8.75 11.3 6.75 3.884 6.75-3.885M8.75 34.58v-7.755L2 22.939m27 0-6.75 3.885v7.754M2.405 15.408 15.5 22.954l13.095-7.546M15.5 38V22.939M29 28.915V16.962a2.98 2.98 0 0 0-1.5-2.585L17 8.4a3.01 3.01 0 0 0-3 0L3.5 14.377A3 3 0 0 0 2 16.962v11.953A2.98 2.98 0 0 0 3.5 31.5L14 37.477a3.01 3.01 0 0 0 3 0L27.5 31.5a3 3 0 0 0 1.5-2.585" stroke="#F5F5F5" strokeWidth="2.5" strokeLinecap="round" strokeinejoin="round" />
         </svg>
     </a>
-        <ul className="text-white md:flex hidden items-center gap-10">
-          <li><a className="hover:text-white/70 transition" href="#">Home</a></li>
+        <ul className="text-white lg:flex hidden items-center gap-10">
+          <li><a className="hover:text-white/70 transition" href="/">Home</a></li>
           <li><a className="hover:text-white/70 transition" href="#">Services</a></li>
           <li><a className="hover:text-white/70 transition" href="#">Portfolio</a></li>
           <li><a className="hover:text-white/70 transition" href="#">Pricing</a></li>
         </ul>
 
-        <button type="button" className="bg-white text-gray-700 md:inline hidden text-sm hover:opacity-90 active:scale-95 transition-all w-40 h-11 rounded-full">
-          Get started
-        </button>
+        <div type="button" className="bg-white text-gray-700 lg:inline hidden text-sm hover:opacity-90 active:scale-95 transition-all w-65 h-11 rounded-full">
+          <SearchBar />
+        </div>
 
         {/* BOTÓN MENÚ MÓVIL */}
         <button
           aria-label="menu-btn"
           type="button"
           onClick={() => setOpen(!open)}
-          className="menu-btn inline-block md:hidden active:scale-90 transition"
+          className="menu-btn inline-block lg:hidden active:scale-90 transition"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="#fff">
             <path d="M3 7a1 1 0 1 0 0 2h24a1 1 0 1 0 0-2zm0 7a1 1 0 1 0 0 2h24a1 1 0 1 0 0-2zm0 7a1 1 0 1 0 0 2h24a1 1 0 1 0 0-2z" />
@@ -38,20 +39,16 @@ export const Navbar = () => {
 
         {/* MENÚ MÓVIL */}
         <div
-          className={`mobile-menu absolute top-[70px] left-0 w-full bg-gradient-to-r from-indigo-700 to-violet-500 p-6 md:hidden ${
+          className={`mobile-menu absolute top-[70px] left-0 w-full bg-gradient-to-r from-indigo-700 to-violet-500 p-6 lg:hidden ${
             open ? 'block' : 'hidden'
           }`}
         >
           <ul className="flex flex-col space-y-4 text-white text-lg">
-            <li><a href="#" className="text-sm">Home</a></li>
+            <li><a href="/" className="text-sm">Home</a></li>
             <li><a href="#" className="text-sm">Services</a></li>
             <li><a href="#" className="text-sm">Portfolio</a></li>
             <li><a href="#" className="text-sm">Pricing</a></li>
           </ul>
-
-          <button type="button" className="bg-white text-gray-700 mt-6 inline md:hidden text-sm hover:opacity-90 active:scale-95 transition-all w-40 h-11 rounded-full">
-            Get started
-          </button>
         </div>
 
       </nav>

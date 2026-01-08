@@ -1,18 +1,25 @@
 import React from 'react'
-import { Gallery } from './components/Gallery'
-import { Gallery2 } from './components/Gallery2'
-import { Gallery3 } from './components/Gallery3'
+import { HomeGallery } from './components/HomeGallery'
+import { HomeSearchBar } from './components/HomeSearchBar'
+import { HomeProducts } from './components/HomeProducts'
+
 
 export const HomeView = () => {
-    return (
-        <div>
-            <Gallery />
+  return (
+    <div>
+      <main className="px-4 max-w-screen-md mx-auto">
 
-            <Gallery2 />
-
-            <Gallery3 />
+        <div className="block md:hidden">
+          <HomeSearchBar />
         </div>
-    )
+
+      </main>
+
+      <HomeGallery />
+      <HomeProducts />
+    </div>
+  )
 }
+
 
 
